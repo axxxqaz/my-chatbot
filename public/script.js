@@ -1,32 +1,16 @@
-function sendMessage() {
-    const userInput = document.getElementById("userInput");
-    const message = userInput.value;
-    if (message.trim() === "") return;
+// Event listener for the 'Send' button
+document.getElementById("sendButton").addEventListener("click", function() {
+    var userInput = document.getElementById("userInput").value;  // Get user input
 
-    displayMessage(message, "user");
-    userInput.value = "";
+    if (userInput.trim() !== "") {
+        // Display user message in the chatbot area
+        var chatbot = document.getElementById("chatbot");
+        chatbot.innerHTML += "<p><strong>You:</strong> " + userInput + "</p>";
+        
+        // Clear the input field after sending
+        document.getElementById("userInput").value = "";
 
-    // Simulated bot response
-    let botResponse = "I'm not sure how to respond to that.";
-    
-    if (message.includes("hello")) {
-        botResponse = "Hello! How can I assist you?";
-    } else if (message.includes("bye")) {
-        botResponse = "Goodbye! Have a great day!";
-    } else if (message.includes("help")) {
-        botResponse = "Sure! What do you need help with?";
+        // Simulate a chatbot response (you can modify this for your chatbot logic)
+        chatbot.innerHTML += "<p><strong>Chatbot:</strong> I'm still learning, but I'll try to help!</p>";
     }
-
-    setTimeout(() => {
-        displayMessage(botResponse, "bot");
-    }, 1000); // Simulate a delay for bot response
-}
-
-function displayMessage(message, sender) {
-    const chatbox = document.getElementById("chatbox");
-    const messageDiv = document.createElement("div");
-    messageDiv.classList.add("message", sender);
-    messageDiv.textContent = message;
-    chatbox.appendChild(messageDiv);
-    chatbox.scrollTop = chatbox.scrollHeight; // Auto-scroll to the bottom
-}
+});
