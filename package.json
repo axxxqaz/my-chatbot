@@ -1,0 +1,11 @@
+{
+  "name": "my-chatbot",
+  "version": "1.0.0",
+  "description": "automated chatbot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "tecwiz",
+  "license": "ISC"
+}
