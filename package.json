@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "description": "A simple chatbot project using HTML, CSS, and JS",
   "scripts": {
-    "build": "mkdir dist && xcopy public\\* dist\\* /E /I",
+    "build": "mkdir dist && cpx 'public/**/*' dist/",
     "start": "http-server dist"
   },
   "dependencies": {
     "http-server": "^0.12.3"
+  },
+  "devDependencies": {
+    "cpx": "^1.5.0"
   }
 }
