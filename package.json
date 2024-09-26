@@ -1,11 +1,12 @@
 {
   "name": "my-chatbot",
   "version": "1.0.0",
-  "description": "automated chatbot",
-  "main": "index.js",
+  "description": "A simple chatbot project using HTML, CSS, and JS",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "mkdir dist && xcopy public\\* dist\\* /E /I",
+    "start": "http-server dist"
   },
-  "author": "tecwiz",
-  "license": "ISC"
+  "dependencies": {
+    "http-server": "^0.12.3"
+  }
 }
